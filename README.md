@@ -14,4 +14,15 @@ After the configuration is done, the program closes and on the next start it is 
 ### Screenshotting
 Right after the program is started, a screenshot will be taken of ALL screens (multi-monitor support)
 Now a red cursor appears and you are free to select the area that should get cropped out.
-The selection will now get uploaded to your Imgur account and the link to the newly screenshot is in your clipboard
+The selection will now get uploaded to your Imgur account and the link to the newly screenshot is in your clipboard.
+
+If you want to cancel, press Escape anytime.
+
+# Compilation
+To compile, Qt5 is needed.
+```
+qmake && make
+```
+
+# Installation
+Nothing, the executable is getting build and you can use and place it anywhere you want.
