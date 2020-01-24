@@ -223,11 +223,16 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
 void MainWindow::moveEvent(QMoveEvent *event)
 {
-    if (im.getState() == ImgurManager::State::ReadyToUpload
-            && size() == resizeTo
-            && pos() != QPoint(0, 0))
+    if (resizeToMax)
     {
-        emit move(0, 0);
+        if (pos() != QPoint(0, 0) || size() == resizeTo)
+        {
+            emit move(0, 0);
+        }
+        else
+        {
+            resizeToMax = false;
+        }
     }
 }
 
