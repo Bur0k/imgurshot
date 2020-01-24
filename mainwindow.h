@@ -50,8 +50,7 @@ public slots:
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
-private:
-
+    virtual void moveEvent(QMoveEvent *event) override;
 };
 
 #endif // MAINWINDOW_H

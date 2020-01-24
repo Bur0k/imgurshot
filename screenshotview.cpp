@@ -143,8 +143,6 @@ void ScreenshotView::mouseMoveEvent(QMouseEvent *event)
             qgs->addItem(bottomLeftPoly);
         }
 
-
-
         if (xMouseLine)
             qgs->removeItem(xMouseLine);
         if (yMouseLine)
@@ -152,7 +150,5 @@ void ScreenshotView::mouseMoveEvent(QMouseEvent *event)
 
         xMouseLine = qgs->addLine(mousePos.x() - 10, mousePos.y(), mousePos.x() + 10, mousePos.y(), mousePen);
         yMouseLine = qgs->addLine(mousePos.x(), mousePos.y() - 10, mousePos.x(), mousePos.y() + 10, mousePen);
-
-
     }
 }

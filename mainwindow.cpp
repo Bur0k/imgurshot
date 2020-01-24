@@ -83,7 +83,7 @@ void MainWindow::setupWindow(QSize size)
     resizeToMax = true;
     resizeTo = size;
     resize(size);
-    move(0, 0);
+    emit move(0, 0);
 }
 
 QPixmap MainWindow::takeScreenshot()
@@ -128,7 +128,6 @@ void MainWindow::start_taking_screenshot()
 
 void MainWindow::processSelection(QPixmap pixmap)
 {
-    emit hide();
     QDateTime currentDateTime = QDateTime::currentDateTime();
     QString timestamp = currentDateTime.toString("yyyy.MM.dd hh:mm:ss");
 
@@ -221,6 +220,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     }
 }
 
+void MainWindow::moveEvent(QMoveEvent *event)
+{
+    if (im.getState() == ImgurManager::State::ReadyToUpload
+            && size() == resizeTo
+            && pos() != QPoint(0, 0))
+    {
+        emit move(0, 0);
+    }
+}
 
 
 
