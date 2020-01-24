@@ -128,6 +128,7 @@ void MainWindow::start_taking_screenshot()
 
 void MainWindow::processSelection(QPixmap pixmap)
 {
+    emit hide();
     QDateTime currentDateTime = QDateTime::currentDateTime();
     QString timestamp = currentDateTime.toString("yyyy.MM.dd hh:mm:ss");
 
